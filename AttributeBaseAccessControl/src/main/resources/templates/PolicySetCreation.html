@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PolicySet Creation</title>
+    <h1 class="title" >PolicySet Creation</h1>
+    <link rel="stylesheet" 	href="/css/policySet.css">
+<!--    <script src="/js/policySet.js"></script>-->
+</head>
+<body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="/js/policySet.js"></script>
+<script type="text/javascript">
+</script>
+
+
+<form id="myForm" class="form">
+    <p class="field required">
+        <label class="label" for="policySetName">PolicySet Name</label>
+        <input class="text-input" id="policySetName" name="policySetName" required="<%= true %>" type="text" >
+    </p>
+    <p class="field required half">
+        <label class="label required denmenoiazei" required="<%= true %>" for="policySetCombAlg">Policy Combining Algorithm</label>
+        <select class ="denmenoiazei required "  name="policySetCombAlg" required="<%= true %>" id="policySetCombAlg">
+            <option value="">--Please select an option--</option>
+            <option value="urn:oasis:names:tc:xacml:1.0:policy-combining-algorithm:first-applicable">First-applicable</option>
+            <option value="urn:oasis:names:tc:xacml:3.0:policy-combining-algorithm:deny-overrides">Deny-overrides</option>
+            <option value="urn:oasis:names:tc:xacml:3.0:policy-combining-algorithm:deny-unless-permit">Deny-unless-permit</option>
+            <option value="urn:oasis:names:tc:xacml:3.0:policy-combining-algorithm:permit-overrides">Permit-overrides</option>
+            <option value="urn:oasis:names:tc:xacml:3.0:policy-combining-algorithm:permit-unless-deny">Permit-unless-deny</option>
+            <option value="urn:oasis:names:tc:xacml:1.0:policy-combining-algorithm:only-one-applicable">Only-one-applicable</option>
+        </select>
+    </p>
+    <p class="field  half">
+        <label class="label" for="policySetDesc">PolicySet Description</label>
+        <input class="text-input" id="policySetDesc" name="policySetDesc"  type="text"/>
+    </p>
+
+    <p class="field  half">
+        <label class="label" for="policyTargetResource">Policy Target Resource</label>
+        <input class="text-input" id="policyTargetResource" name="policyTargetResource"  type="text"/>
+    </p>
+    <p class="field  half">
+        <label class="label" for="policyTargetAction">Policy TargeT Action</label>
+        <input class="text-input" id="policyTargetAction" name="policyTargetAction"  type="text"/>
+    </p>
+    <p class="field  half">
+        <label class="label" for="policyTargetSubject">Policy Target Subject</label>
+        <input class="text-input" id="policyTargetSubject" name="policyTargetSubject"  type="text"/>
+    </p>
+
+    <p class=" flex-parent jc-center">
+        <input class="button1" type="submit" value="Create Policy Set"/>
+        <input id="btn" class="button1 inc" type="button" value="Add PolicyId" onclick="addPolicyId()"/>
+    </p>
+</form>
+
+</body>
+</html>

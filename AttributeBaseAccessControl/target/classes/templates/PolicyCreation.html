@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Policy Creation</title>
+
+    <h1 class="title" >Policy Creation</h1>
+    <link rel="stylesheet" 	href="/css/policy.css">
+
+</head>
+<body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/json2/20160511/json2.min.js" integrity="sha512-uWk2ZXl3GVrq6DZsrL5dSg1S/F3MNQ9VaDFigqXOoKUnWG58UxOuJGfTrzh5KjpoBvPiFniL2PahU2HUTFMJXw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="/js/policy.js"></script>
+<script type="text/javascript">
+</script>
+
+<div>
+    <p id="respText">
+    </p>
+</div>
+
+<form id="myForm" class="form">
+    <p class="field required">
+        <label class="label " for="policyName">Policy Name </label>
+        <input class="text-input" id="policyName" name="policyName" required="<%= true %>" type="text"/>
+    </p>
+    <p class="field required half">
+        <label class="label required denmenoiazei" required="<%= true %>" for="ruleCombAl">Rule Combining Algorithm</label>
+        <select class ="denmenoiazei required "  name="ruleCombAl" required="<%= true %>" id="ruleCombAl">
+            <option value="">--Please select an option--</option>
+            <option value="urn:oasis:names:tc:xacml:1.0:rule-combining-algorithm:first-applicable">First-applicable</option>
+            <option value="urn:oasis:names:tc:xacml:3.0:rule-combining-algorithm:deny-overrides">Deny-overrides</option>
+            <option value="urn:oasis:names:tc:xacml:3.0:rule-combining-algorithm:deny-unless-permit">Deny-unless-permit</option>
+            <option value="urn:oasis:names:tc:xacml:3.0:rule-combining-algorithm:permit-overrides">Permit-overrides</option>
+            <option value="urn:oasis:names:tc:xacml:3.0:rule-combining-algorithm:permit-unless-deny">Permit-unless-deny</option>
+            <option value="urn:oasis:names:tc:xacml:1.0:policy-combining-algorithm:only-one-applicable">Only-one-applicable</option>
+        </select>
+    </p>
+    <p class="field half">
+        <label class="label" for="policyDesc">Policy Description</label>
+        <input class="text-input" id="policyDesc" name="policyDesc"  type="text"/>
+    </p>
+
+    <p class="field half">
+        <label class="label" for="policyTargetResource">Policy Target Resource</label>
+        <input class="text-input" id="policyTargetResource" name="policyTargetResource" type="text"/>
+    </p>
+
+    <p class="field half">
+        <label class="label" for="policyTargetAction">Policy Target Action</label>
+        <input class="text-input" id="policyTargetAction" name="policyTargetAction" type="text"/>
+    </p>
+    <p class="field half">
+        <label class="label" for="policyTargetSubject">Policy Target Subject</label>
+        <input class="text-input" id="policyTargetSubject" name="policyTargetSubject" type="text"/>
+    </p>
+    <p class=" flex-parent jc-center">
+        <input class="button1" type="submit" value="Create Policy"/>
+        <input id="btn" class="button1 inc" type="button" value="Add Rule" onclick="addRule()"/>
+    </p>
+</form>
+
+</body>
+</html>
