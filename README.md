@@ -1,4 +1,4 @@
-# JavaAttributeBaseAccessControlSystem
+# Java Attribute Based Access Control System
 
 
 The goal of this project is to design and implement an Access Control (ABAC) system that is able to offer effective protection against unauthorized access to applications and data stored in inherently insecure environments such as the cloud, by taking into account appropriate contextual attributes that characterize when a request is made.
